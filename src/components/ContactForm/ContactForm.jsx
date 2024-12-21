@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts); // Отримуємо список контактів з Redux
+  const contacts = useSelector(selectContacts);
 
   const orderSchema = Yup.object({
     name: Yup.string()

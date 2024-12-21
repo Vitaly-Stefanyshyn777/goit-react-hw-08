@@ -24,7 +24,7 @@ const HomePage = () => {
           Hello, my friend!!{" "}
           <span role="./" aria-label="./">
             <img
-              src={erorImage} // Підключення імпортованого зображення
+              src={erorImage}
               alt="Error Page"
               style={{ width: "100%", maxWidth: "1200px", marginTop: "3rem" }}
             />

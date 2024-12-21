@@ -1,77 +1,11 @@
-/* .wrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;  
-    background-color: #d1afce;
-  }
-  
-  .textTitle {
-    font-family: "Roboto", sans-serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: #a12371;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .form {
-    width: 100%;
-    max-width: 400px;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .field {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
-  
-  .field:focus {
-    outline: none;
-    border-color: #6e064c;
-    box-shadow: 0px 0px 5px rgba(216, 43, 144, 0.5);
-  }
-  
-  button {
-    padding: 10px;
-    font-size: 18px;
-    background-color: #5f045f;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #330779;
-  }
-  
-  button:disabled {
-    background-color: #d3d3d3;
-    cursor: not-allowed;
-  } */
-
 .wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh; /* Забезпечення центрування навіть для довгих форм */
+  min-height: 100vh;
   padding: 20px;
-  background-color: #f5f5f5; /* Нейтральний фон */
+  background-color: #f5f5f5;
 }
 
 .textTitle {
@@ -89,12 +23,12 @@
   max-width: 420px;
   padding: 25px;
   background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Професійна тінь */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border: 1px solid #ddd; /* Тонка рамка */
+  border: 1px solid #ddd;
 }
 
 .field {
@@ -111,14 +45,14 @@
 
 .field:focus {
   outline: none;
-  border-color: #6200ea; /* Акцентний колір */
-  box-shadow: 0px 4px 10px rgba(98, 0, 234, 0.2); /* Тонка тінь */
+  border-color: #6200ea;
+  box-shadow: 0px 4px 10px rgba(98, 0, 234, 0.2);
 }
 
 button {
   padding: 12px 16px;
   font-size: 16px;
-  background-color: #6200ea; /* Акцентний колір */
+  background-color: #6200ea;
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -127,12 +61,12 @@ button {
     background-color 0.3s,
     transform 0.2s ease;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(98, 0, 234, 0.2); /* Тонка тінь */
+  box-shadow: 0 4px 10px rgba(98, 0, 234, 0.2);
 }
 
 button:hover {
   background-color: #3700b3;
-  transform: translateY(-2px); /* Невелике підняття */
+  transform: translateY(-2px);
 }
 
 button:disabled {
@@ -142,7 +76,6 @@ button:disabled {
   box-shadow: none;
 }
 
-/* Мобільна адаптація */
 @media (max-width: 768px) {
   .form {
     padding: 20px;

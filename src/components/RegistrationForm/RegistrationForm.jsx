@@ -4,7 +4,7 @@ import s from "./RegistrationForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { useNavigate } from "react-router-dom";
-import { selectUserAuthStatus } from "../../redux/auth/selectors"; // Новий селектор
+import { selectUserAuthStatus } from "../../redux/auth/selectors";
 import toast from "react-hot-toast";
 
 const validationSchema = Yup.object({
@@ -22,7 +22,7 @@ const validationSchema = Yup.object({
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const isUserAuthenticated = useSelector(selectUserAuthStatus); // Використання селектора
+  const isUserAuthenticated = useSelector(selectUserAuthStatus);
 
   const handleSubmit = (values, { resetForm, setSubmitting }) => {
     dispatch(register(values))
@@ -42,7 +42,6 @@ const RegistrationForm = () => {
       });
   };
 
-  // Перевірка на вже аутентифікованого користувача
   if (isUserAuthenticated) {
     navigate("/contacts");
   }

@@ -14,17 +14,15 @@ import { authReducer } from "./auth/slice";
 import { contactsReducer } from "./contacts/slice";
 import { filtersReducer } from "./filters/slice";
 
-// Конфігурація persist для auth
 const authPersistConfig = {
   key: "auth",
   storage,
-  whitelist: ["token"], // Зберігаємо лише токен
+  whitelist: ["token"],
 };
 
-// Основна конфігурація store
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(authPersistConfig, authReducer), // Persisted reducer
+    auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
     filters: filtersReducer,
   },
@@ -34,8 +32,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-  devTools: import.meta.env.MODE === "development", // DevTools для розробки
+  devTools: import.meta.env.MODE === "development",
 });
 
-// Persistor для збереження стану у LocalStorage
 export const persistor = persistStore(store);

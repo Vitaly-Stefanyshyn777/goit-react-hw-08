@@ -17,5 +17,4 @@ const filtersSlice = createSlice({
 export const { changeFilter } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;
 
-// Селектор із захистом від `undefined` та значенням за замовчуванням
 export const selectNameFilter = (state) => state.filters?.name ?? "";

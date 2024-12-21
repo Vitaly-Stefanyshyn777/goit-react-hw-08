@@ -1,103 +1,12 @@
-// import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-// import { logOut } from "../auth/operations";
-// import {
-//   fetchContacts,
-//   addContact,
-//   deleteContact,
-//   editContact,
-// } from "./operations";
-
-// const handlePending = (state) => {
-//   console.log("Pending state triggered");
-//   state.isLoading = true;
-
-// };
-
-// const handleRejected = (state, action) => {
-//   state.isLoading = false;
-//   state.error = action.payload;
-// };
-
-// const initialState = {
-//   items: [],
-//   isLoading: false,
-//   error: null,
-// };
-
-// const contactsSlice = createSlice({
-//   name: "contacts",
-//   initialState,
-//   extraReducers: (builder) => {
-//     builder
-//       .addCase(logOut.fulfilled, (state) => {
-//         state.items = [];
-//         state.error = null;
-//         state.isLoading = false;
-//       })
-//       .addCase(fetchContacts.fulfilled, (state, action) => {
-//         console.log("Fetch Contacts Fulfilled:", action.payload);
-//         state.items = action.payload;
-//         state.isLoading = false;
-//         state.error = null;
-//       })
-
-//       .addCase(addContact.fulfilled, (state, action) => {
-//         state.isLoading = false;
-//         state.error = null;
-//         state.items.push(action.payload);
-//       })
-
-//       .addCase(deleteContact.fulfilled, (state, action) => {
-//         state.isLoading = false;
-//         state.error = null;
-//         state.items = state.items.filter(
-//           (item) => item.id !== action.payload.id,
-//         );
-//       })
-
-//       .addCase(editContact.fulfilled, (state, action) => {
-//         const index = state.items.findIndex(
-//           (item) => item.id === action.payload.id,
-//         );
-//         if (index !== -1) {
-//           state.items[index] = action.payload;
-//         }
-//         state.error = null;
-//         state.isLoading = false;
-//       })
-
-//       .addMatcher(
-//         isAnyOf(
-//           fetchContacts.pending,
-//           addContact.pending,
-//           deleteContact.pending,
-//           editContact.pending,
-//         ),
-//         handlePending,
-//       )
-//       .addMatcher(
-//         isAnyOf(
-//           fetchContacts.rejected,
-//           addContact.rejected,
-//           deleteContact.rejected,
-//           editContact.rejected,
-//         ),
-//         handleRejected,
-//       );
-//   },
-// });
-
-// export const contactsReducer = contactsSlice.reducer;
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { fetchContacts, addContact, deleteContact } from "./operations";
 import { logOut } from "../auth/operations";
 
-// Початковий стан контактів
 const initialState = {
-  items: [], // Список контактів
-  isLoading: false, // Індикатор завантаження
-  error: null, // Зберігання помилки
-  isContactsFetched: false, // Індикатор завантаження контактів
+  items: [],
+  isLoading: false,
+  error: null,
+  isContactsFetched: false,
 };
 
 const contactsSlice = createSlice({
@@ -105,26 +14,22 @@ const contactsSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder
-      // ====== FETCH CONTACTS ======
+
       .addCase(fetchContacts.fulfilled, (state, { payload }) => {
         state.items = payload;
         state.isContactsFetched = true;
       })
 
-      // ====== ADD CONTACT ======
       .addCase(addContact.fulfilled, (state, { payload }) => {
         state.items.push(payload);
       })
 
-      // ====== DELETE CONTACT ======
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
         state.items = state.items.filter((item) => item.id !== payload.id);
       })
 
-      // ====== LOG OUT ======
       .addCase(logOut.fulfilled, () => initialState)
 
-      // ====== COMMON PENDING STATE ======
       .addMatcher(
         isAnyOf(
           fetchContacts.pending,
@@ -137,7 +42,6 @@ const contactsSlice = createSlice({
         }
       )
 
-      // ====== COMMON REJECTED STATE ======
       .addMatcher(
         isAnyOf(
           fetchContacts.rejected,
@@ -150,7 +54,6 @@ const contactsSlice = createSlice({
         }
       )
 
-      // ====== COMMON FULFILLED STATE ======
       .addMatcher(
         isAnyOf(
           fetchContacts.fulfilled,

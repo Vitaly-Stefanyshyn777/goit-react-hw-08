@@ -1,14 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { goitAPI } from "../auth/operations";
 
-// Функція для обробки помилок
 const handleApiError = (error, thunkAPI) => {
   return thunkAPI.rejectWithValue(
     error.response?.data?.message || error.message
   );
 };
 
-// Отримати всі контакти
 export const fetchContacts = createAsyncThunk(
   "contacts/fetchAll",
   async (_, thunkAPI) => {
@@ -21,7 +19,6 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 
-// Додати новий контакт
 export const addContact = createAsyncThunk(
   "contacts/add",
   async (contact, thunkAPI) => {
@@ -34,20 +31,18 @@ export const addContact = createAsyncThunk(
   }
 );
 
-// Видалити контакт
 export const deleteContact = createAsyncThunk(
   "contacts/delete",
   async (contactId, thunkAPI) => {
     try {
       const { data } = await goitAPI.delete(`/contacts/${contactId}`);
-      return data; // Повертаємо ID видаленого контакту
+      return data;
     } catch (error) {
       return handleApiError(error, thunkAPI);
     }
   }
 );
 
-// Оновити контакт
 export const editContact = createAsyncThunk(
   "contacts/edit",
   async ({ id, name, number }, thunkAPI) => {

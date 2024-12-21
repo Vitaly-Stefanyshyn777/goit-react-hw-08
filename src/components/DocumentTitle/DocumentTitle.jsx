@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
  * @returns {JSX.Element}
  */
 const DocumentTitle = ({ children }) => {
-  const title = children || "Default Title"; // Default title as fallback
+  const title = children || "Default Title";
 
   return (
     <Helmet>
@@ -19,7 +19,7 @@ const DocumentTitle = ({ children }) => {
 };
 
 DocumentTitle.propTypes = {
-  children: PropTypes.string.isRequired, // Ensures that children is a string
+  children: PropTypes.string.isRequired,
 };
 
 export default DocumentTitle;

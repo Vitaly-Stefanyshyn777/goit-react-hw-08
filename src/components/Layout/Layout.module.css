@@ -1,0 +1,17 @@
+/* .layout {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+   */
+
+.layout {
+  max-width: 960px;
+  margin: 0 auto; /* Центрування по горизонталі */
+  padding: 20px; /* Додано більше внутрішнього відступу */
+  background-color: #ffffff; /* Білий фон для класичного вигляду */
+  border-radius: 8px; /* Легкі закруглення для сучасного вигляду */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тінь для створення ефекту об'єму */
+  font-family: "Arial", sans-serif; /* Класичний шрифт */
+  border: 1px solid #e0e0e0; /* Легкий сірий контур */
+}

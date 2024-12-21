@@ -1,0 +1,61 @@
+/* .authNavCon {
+  display: flex;
+  flex-direction: row;
+align-items: center;
+  justify-content: center;
+  gap: 25px;
+  font-family: "Montserrat", sans-serif;
+
+ 
+ 
+
+}
+
+  .link {
+    color: rgb(137, 226, 233);
+    font-weight: bold;
+  }
+  .active {
+    text-decoration: underline;
+    color: #c0ebe1;
+  }
+
+.link:hover {
+  color: #8d6a85;
+} */
+
+/* Загальний контейнер AuthNav */
+.authNavCon {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Посилання на Register та Login */
+.authLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Ефект наведення */
+.authLink:hover {
+  background-color: #ffdd57;
+  color: #333333;
+  transform: translateY(-2px);
+}
+
+/* Активне посилання */
+.authLink.active {
+  background-color: #ffdd57;
+  color: #333333;
+  font-weight: bold;
+}

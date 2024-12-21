@@ -1,0 +1,107 @@
+/* .headerBar {
+  
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    padding: 25px 45px;
+    box-shadow: 10px 10px 8px 1px #026d6d;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background: linear-gradient(to right, #e706a4 0%, rgba(3, 37, 65, 1) 100%);
+    margin-bottom: 25px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+  } */
+.headerBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px 30px; */
+  background: linear-gradient(
+    to right,
+    #b8b6c0,
+    #3b3c3e
+  ); /* Класичний градієнт */
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Логотип або головний елемент */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #ffdd57; /* Зміна кольору при наведенні */
+}
+
+/* Група навігації */
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Навігаційні посилання */
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #ffdd57;
+  transform: scale(1.1);
+}
+
+/* UserMenu: контейнер для користувача */
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Ім'я користувача */
+.username {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* Кнопка Logout */
+.logoutBtn {
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #e63946;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #d62828;
+  transform: scale(1.05);
+}
